@@ -6,6 +6,8 @@ const colors = require("colors");
 const connectDB = require("./config/db");
 const path = require("path");
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocs = require("./swaggerOptions");
 const errorHandler = require("./middlewares/error");
 // Body parser // FrontEnd dan serverga ma'lumotlarni olish uchun yordam beradigon Middlewarelar hisoblanadi
 app.use(express.json());
@@ -19,6 +21,8 @@ if (process.env.NODE_ENV === "development") {
 }
 // "public/uploads" papkasini statik fayllar uchun ulash
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+// Swagger UI uchun endpointni yaratamiz
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Routes
 app.use("/api/v1/auth", require("./routes/auth.route"));
 app.use("/api/v1/stars", require("./routes/star.route"));
