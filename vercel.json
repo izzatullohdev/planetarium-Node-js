@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "planetarium-Node-js",
+  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
   "routes": [
     {
       "src": "/(.*)",
