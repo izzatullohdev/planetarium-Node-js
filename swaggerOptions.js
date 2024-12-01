@@ -12,7 +12,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000", // Loyihaning serveri URL manzili
+        url: "https://planetarium-node-c4inqky3o-izzatbekmadaminov7141s-projects.vercel.app", // Loyihaning serveri URL manzili
       },
     ],
   },
