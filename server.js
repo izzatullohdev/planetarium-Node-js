@@ -28,6 +28,9 @@ app.use("/api/v1/auth", require("./routes/auth.route"));
 app.use("/api/v1/stars", require("./routes/star.route"));
 app.use("/api/v1/planets", require("./routes/planet.route"));
 
+app.use("/", (req, res) => {
+  res.redirect("/api-docs");
+});
 // Error
 app.use(errorHandler);
 const PORT = process.env.PORT || 3000;

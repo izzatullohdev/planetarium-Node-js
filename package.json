@@ -2,6 +2,9 @@
   "name": "planetarium",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
