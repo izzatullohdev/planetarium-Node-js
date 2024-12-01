@@ -9,13 +9,14 @@ const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocs = require("./swaggerOptions");
 const errorHandler = require("./middlewares/error");
+dotenv.config();
+connectDB();
 // Body parser // FrontEnd dan serverga ma'lumotlarni olish uchun yordam beradigon Middlewarelar hisoblanadi
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 //Connecting to DB
-connectDB();
-dotenv.config();
+
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
